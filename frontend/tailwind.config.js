@@ -8,6 +8,10 @@ export default {
     extend: {
       colors:{
         'primary':"#5F6FFf"
+
+      },
+      gridTemplateColumns:{
+        'auto':`repeat(auto-fill,minmax(200px,1fr))`
       }
     },
   },
