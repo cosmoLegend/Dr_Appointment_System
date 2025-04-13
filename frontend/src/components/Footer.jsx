@@ -9,7 +9,7 @@ const Footer = () => {
 
         {/* Left */}
         <div >
-          <img className="mb-5 w-40"src={assets.logo} alt="Logo" className="w-28 mb-4" />
+          <img className="mb-5 w-40"src={assets.logo} alt="Logo"  />
           <p className="w-full md:w-2/3 text-gray-600 leading-6">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur amet accusamus eveniet, inventore labore quae qui cum, repellat rerum necessitatibus impedit odit nam quibusdam praesentium odio voluptate modi voluptates velit?
           </p>
@@ -31,7 +31,7 @@ const Footer = () => {
           <p className="text-xl font-medium mb-5">Get in Touch</p>
           <ul  className="flex flex-col gap-2 text-gray-600 ">
             <li>+91 144 544654</li>
-            <li>presicripto@gmail.com</li>
+            <li>prescripto@gmail.com</li>
           </ul>
         </div>
       </div>
