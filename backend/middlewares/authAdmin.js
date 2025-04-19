@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import 'dotenv/config'
-//admin authenticartion middleware 
+//admin authentication middleware 
 
 const authAdmin = (req, res, next) => {
     try {
@@ -13,7 +13,7 @@ const authAdmin = (req, res, next) => {
         const token_decode = jwt.verify(atoken, process.env.JWT_SECRET)
 
         if(token_decode !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD){
-            return res.json({ success: false, message: 'Not Authorized Logina Again'});
+            return res.json({ success: false, message: 'Not Authorized Login Again'});
         }
 
         next();
