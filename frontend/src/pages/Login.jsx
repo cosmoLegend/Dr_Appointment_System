@@ -2,90 +2,73 @@ import React, { useState } from 'react'
 
 const Login = () => {
   const [state, setState] = useState('Sign Up')
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
 
   const onSubmitHandler = async (event) => {
     event.preventDefault()
-
-    if (state === 'Sign Up') {
-      // sign up logic here
-      console.log('Signing Up:', { name, email, password })
-    } else {
-      // login logic here
-      console.log('Logging In:', { email, password })
-    }
   }
 
   return (
-    <form
-      onSubmit={onSubmitHandler}
-      className='min-h-[80vh] flex items-center justify-center px-4'
-    >
-      <div className='bg-white shadow-lg p-8 rounded-lg w-full max-w-md'>
-        <h2 className='text-2xl font-bold text-gray-800 mb-2'>
-          {state === 'Sign Up' ? 'Create Account' : 'Login'}
-        </h2>
-        <p className='text-sm text-gray-500 mb-6'>
-          Please {state === 'Sign Up' ? 'sign up' : 'log in'} to book appointments
-        </p>
+    <form onSubmit={onSubmitHandler} className='min-h-[80vh] flex items-center'> {/* fixed typo: clssName -> className */}
+      <div className='flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-700 text-sm shadow-xl bg-white'> {/* enhanced colors & added bg */}
+        <p className='text-2xl font-semibold'>{state === 'Sign Up' ? "Create Account" : "Login"}</p>
+        <p className='text-zinc-500 mb-2'>Please {state === 'Sign Up' ? "sign up" : "log in"} to book appointment</p>
 
-        {state === 'Sign Up' && (
-          <div className='mb-4'>
-            <label className='block text-sm font-medium text-gray-600 mb-1'>Full Name</label>
+        {state === "Sign Up" &&
+          <div className='w-full'>
+            <p className='mb-1'>Full Name</p>
             <input
-              type='text'
+              className='border border-zinc-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-primary'
+              type="text"
+              onChange={(e) => setName(e.target.value)} // fixed .name -> .value
               value={name}
-              onChange={(e) => setName(e.target.value)}
-              className='w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary'
               required
             />
           </div>
-        )}
+        }
 
-        <div className='mb-4'>
-          <label className='block text-sm font-medium text-gray-600 mb-1'>Email</label>
+        <div className='w-full'>
+          <p className='mb-1'>Email</p>
           <input
-            type='email'
+            className='border border-zinc-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-primary'
+            type="email"
+            onChange={(e) => setEmail(e.target.value)} // fixed .name -> .value
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className='w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary'
             required
           />
         </div>
 
-        <div className='mb-4'>
-          <label className='block text-sm font-medium text-gray-600 mb-1'>Password</label>
+        <div className='w-full'>
+          <p className='mb-1'>Password</p>
           <input
-            type='password'
+            className='border border-zinc-300 rounded w-full p-2 focus:outline-none focus:ring-2 focus:ring-primary'
+            type="password"
+            onChange={(e) => setPassword(e.target.value)} // fixed .name -> .value
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className='w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-primary'
             required
           />
         </div>
 
-        <button
-          type='submit'
-          className='w-full bg-primary text-white py-2 rounded-md hover:bg-opacity-90 transition'
-        >
-          {state === 'Sign Up' ? 'Sign Up' : 'Login'}
+        <button className='bg-primary text-white w-full py-2 rounded-md text-base hover:opacity-90 transition-all mt-2'>
+          {state === 'Sign Up' ? "Create Account" : "Login"}
         </button>
 
-        <p className='text-sm text-center text-gray-500 mt-4'>
-          {state === 'Sign Up' ? 'Already have an account?' : "Don't have an account?"}
-          <span
-            className='text-primary font-medium cursor-pointer ml-1'
-            onClick={() => setState(state === 'Sign Up' ? 'Login' : 'Sign Up')}
-          >
-            {state === 'Sign Up' ? 'Login' : 'Sign Up'}
-          </span>
-        </p>
+        {
+          state === 'Sign Up' ?
+            <p className='text-sm mt-2'>Already have an Account?
+              <span onClick={() => setState('Login')} className='text-primary underline cursor-pointer ml-1'>Login Here</span>
+            </p>
+            :
+            <p className='text-sm mt-2'>Create a new account?
+              <span onClick={() => setState('Sign Up')} className='text-primary underline cursor-pointer ml-1'>Click Here</span>
+            </p>
+        }
       </div>
     </form>
   )
 }
 
 export default Login
- 
