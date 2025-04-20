@@ -11,7 +11,7 @@ const Footer = () => {
         <div >
           <img className="mb-5 w-40"src={assets.logo} alt="Logo"  />
           <p className="w-full md:w-2/3 text-gray-600 leading-6">
-          Prescripto is your trusted partner in healthcare, offering seamless access to doctors, prescriptions, and medical advice. Our mission is to make healthcare accessible, efficient, and reliable for everyone.          </p>
+          Prescripto is your trusted partner in healthcare, offering seamless access to doctors, prescriptions, and medical advice. Our mission is to make healthcare accessible, efficient, and reliable for everyone!          </p>
         </div>
 
         {/* Center */}
