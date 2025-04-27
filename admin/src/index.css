@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  @apply hidden 
+}
+
 
 .custom-toast-error {
   background-color: hsl(214, 100%, 97%);  
