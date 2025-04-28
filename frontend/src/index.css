@@ -24,3 +24,30 @@
         @apply text-white bg-primary
     }
 }
+
+.custom-toast-error {
+    background-color: hsl(214, 100%, 97%);  
+    position: relative;           /* Tailwind blue-50 */
+    color: #1e40af;                        /* Tailwind blue-800 */
+    border-left: 4px solid #f4f7f8;        /* Tailwind blue-500 */
+    font-weight: 500;
+    box-shadow: 0px 4px 12px rgba(68, 202, 90, 0.08);
+  }
+  
+  .custom-toast-success {
+    background-color: hsl(214, 100%, 97%); /* green */
+    color: #1e40af;
+    font-weight: 500;
+  }
+  
+  
+  .custom-progress-bar {
+    background-color: white !important; /* The filled bar */
+    
+  }
+  .custom-progbar {
+    background-color: rgb(39, 214, 20);
+  }
+  .custom-toast-error .Toastify__progress-bar--error {
+    background-color: #3b82f6 !important; /* The part that gets revealed */
+  }

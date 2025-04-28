@@ -7,12 +7,12 @@ import axios from "axios";
 
 const AddDoctor = () => {
 
-    const [docImg, setDocImg] = useState(false)
+    const [image, setimage] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [experience, setExperience] = useState('1 Year')
-    const [fees, setFees] = useState('')
+    const [fee, setFee] = useState('')
     const [about, setAbout] = useState('')
     const [speciality, setSpeciality] = useState('General Physician')
     const [degree, setDegree] = useState('')
@@ -27,7 +27,7 @@ const AddDoctor = () => {
 
         try {
 
-            if (!docImg) {
+            if (!image) {
                 return toast.error("Image Not Selected", {
                     className: 'custom-toast-error',
                     progressClassName: 'custom-progress-bar'
@@ -35,16 +35,16 @@ const AddDoctor = () => {
             }
 
             const formData = new FormData()
-            formData.append('docImg', docImg)
+            formData.append('image', image)
             formData.append('name', name)
             formData.append('email', email)
             formData.append('password', password)
             formData.append('experience', experience)
-            formData.append('fees', Number(fees))
+            formData.append('fee', Number(fee))
             formData.append('about', about)
             formData.append('speciality', speciality)
             formData.append('degree', degree)
-            formData.append('address1', JSON.stringify({ line1: address1, line2: address2 }))
+            formData.append('address', JSON.stringify({ line1: address1, line2: address2 }))
 
             // console log formData
 
@@ -56,14 +56,14 @@ const AddDoctor = () => {
 
             if (data.success) {
                 toast.success(data.message, {
-                    className: 'custom-toast-error',
-                    progressClassName: 'custom-progress-bar'
+                    className: 'custom-toast-success',
+                    progressClassName: 'custom-progbar'
                 })
-                setDocImg(false)
+                setimage(false)
                 setName('')
                 setEmail('')
                 setPassword('') 
-                setFees('')
+                setFee('')
                 setAbout('')
                 setDegree('')
                 setAddress1('')
@@ -80,6 +80,7 @@ const AddDoctor = () => {
         } catch (error) {
 
             toast.error(error.message)
+            console.log(error)
 
         }
     }
@@ -93,11 +94,11 @@ const AddDoctor = () => {
 
             <div className="bg-white px-8 py-8 border rounded w-full max-w-4xl max-h-[80vh] overflow-y-scroll">
                 <div className="flex items-center gap-4 mb-8 text-gray-500">
-                    <label htmlFor="doc-img">
-                        <img className="w-16 bg-gray-100 rounded-full cursor-pointer" src={docImg ? URL.createObjectURL(docImg) : assets.upload_area} alt="" />
+                    <label htmlFor="image">
+                        <img className="w-16 bg-gray-100 rounded-full cursor-pointer" src={image ? URL.createObjectURL(image) : assets.upload_area} alt="" />
  {/*  */}
                     </label>
-                    <input onChange={(e) => setDocImg(e.target.files[0])} type="file" id="doc-img" hidden />
+                    <input onChange={(e) => setimage(e.target.files[0])} type="file" id="image" hidden />
                     <p>Upload Doctor <br /> Picture </p>
                 </div>
 
@@ -138,7 +139,7 @@ const AddDoctor = () => {
 
                         <div className="flex-1 flex flex-col gap-1">
                             <p>Fees</p>
-                            <input onChange={(e) => setFees(e.target.value)} value={fees} className="border rounded px-3 py-2" type="number" placeholder="Fees" required />
+                            <input onChange={(e) => setFee(e.target.value)} value={fee} className="border rounded px-3 py-2" type="number" placeholder="Fees" required />
                         </div>
 
                     </div>

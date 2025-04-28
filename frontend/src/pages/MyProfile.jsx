@@ -1,27 +1,34 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { AppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
 
 const MyProfile = () => {
 
-  const [userData, setUserData] = useState({
-    name: "Kuber Vincent",
-    image: assets.profile_pic,
-    email: 'aryan.20223545@mnnit.ac.in',
-    phone: '+1 123 456 7890',
-    address: {
-      line1: "557th Cross, Richmond",
-      line2: "Circle, Church road, London"
-    },
-    gender: 'Male',
-    dob: '2000-01-20'
-  })
+  const {userData, setUserData, backendUrl , loadUserProfileData} = useContext(AppContext)
 
   const [isEdit, setIsEdit] = useState(false)
+  const [image, setImage] = useState(false)
 
-  return (
+  const updateUserProfileData = async () => {
+
+  }
+
+  return userData && (
     <div className='max-w-g flex flex-col gap-3 text-sm p-4 text-neutral-700'>
 
-      <img className='w-36 rounded shadow' src={userData.image} alt="Profile" />
+      {
+        isEdit
+          ? <label htmlFor='image'>
+            <div>
+              <img src ={image ? URL.createObjectURL(image) : userData.image} alt ="" />
+              <img src = {image ? '' : assets.upload_icon} alt ="" />
+            </div>
+            <input onChange={(e) => setImage(e.target.files[0])} type = "file" id ="image" hidden />
+          </label>
+          :<img className='w-36 rounded ' src = {userData.image} alt="" />
+      }
+
+     
 
       {
         isEdit
