@@ -25,7 +25,7 @@ A full-stack **Doctor Appointment Booking System** built using the **MERN stack 
 - Accept, reject, or cancel appointments
 - Dashboard for daily appointments and analytics
 
-### 🛠️ Admin Features (Optional)
+### 🛠️ Admin Features
 - Manage all users (add/remove doctors or patients)
 - View all appointments across the system
 - Ban users or delete accounts
@@ -33,7 +33,6 @@ A full-stack **Doctor Appointment Booking System** built using the **MERN stack 
 ### 📅 Appointment Management
 - Real-time appointment status updates
 - Prevent double bookings via backend validation
-- Notification integration (Email/SMS - optional)
 
 ---
 
@@ -45,4 +44,4 @@ A full-stack **Doctor Appointment Booking System** built using the **MERN stack 
 | **Backend**  | Node.js, Express.js         |
 | **Database** | MongoDB, Mongoose           |
 | **Auth**     | JSON Web Tokens (JWT), bcrypt |
-| **Others**   | nodemailer (optional), dotenv, 
+| **Others**   |  dotenv
