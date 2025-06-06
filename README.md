@@ -1,52 +1,48 @@
-DR_APPOINTMENT_SYSTEM
 
+# 🏥 Doctor Appointment System – MERN Stack
 
-🚀 Features
-🔐 Authentication & Authorization
-Secure login & registration for patients and doctors
+A full-stack **Doctor Appointment Booking System** built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**. This system allows patients to schedule appointments with doctors, while doctors manage their availability and appointments through a responsive dashboard.
 
-Role-based access control (admin/doctor/patient)
+---
 
-👨‍⚕️ Patient Features
-Browse list of available doctors
+## 🚀 Features
 
-Book appointments with preferred time slots
+### 🔐 Authentication & Authorization
+- Secure login & registration for **patients** and **doctors**
+- JWT-based authentication
+- Role-based access control (admin/doctor/patient)
 
-View upcoming and past appointments
+### 👨‍⚕️ Patient Features
+- Browse list of available doctors
+- Book appointments with preferred time slots
+- View upcoming and past appointments
+- Cancel or reschedule appointments
+- Receive appointment status updates
 
-Cancel or reschedule appointments
+### 🩺 Doctor Features
+- Manage daily/weekly availability
+- View booked appointments
+- Accept, reject, or cancel appointments
+- Dashboard for daily appointments and analytics
 
-Get appointment confirmation & status updates
+### 🛠️ Admin Features (Optional)
+- Manage all users (add/remove doctors or patients)
+- View all appointments across the system
+- Ban users or delete accounts
 
-🩺 Doctor Features
-Manage availability and time slots
+### 📅 Appointment Management
+- Real-time appointment status updates
+- Prevent double bookings via backend validation
+- Notification integration (Email/SMS - optional)
 
-View upcoming appointments
+---
 
-Approve/reject/cancel patient bookings
+## 🖥️ Tech Stack
 
-Dashboard for appointment stats
-
-🛠️ Admin Features
-Manage users (patients/doctors)
-
-View system-wide appointments
-
-Remove or ban users
-
-📅 Appointment Management
-Real-time appointment status updates
-
-Prevent overlapping bookings
-
-Email/SMS integration (optional)
-
-🖥️ Tech Stack
-Technology	Description
-MongoDB	NoSQL Database
-Express.js	Backend Framework
-React.js	Frontend UI Library
-Node.js	JavaScript Runtime
-Mongoose	MongoDB ODM
-JWT	Authentication
-Tailwind
+| Layer        | Technology                  |
+|--------------|-----------------------------|
+| **Frontend** | React.js, Axios, Context API/Redux, TailwindCSS/Bootstrap |
+| **Backend**  | Node.js, Express.js         |
+| **Database** | MongoDB, Mongoose           |
+| **Auth**     | JSON Web Tokens (JWT), bcrypt |
+| **Others**   | nodemailer (optional), dotenv, 
